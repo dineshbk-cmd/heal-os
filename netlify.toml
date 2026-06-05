@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Map the app's /api/claude calls to the serverless function
+[[redirects]]
+  from = "/api/claude"
+  to = "/.netlify/functions/claude"
+  status = 200
+
+# SPA fallback so the React app handles routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
