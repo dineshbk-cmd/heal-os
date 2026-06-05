@@ -10,7 +10,7 @@ import React, { useState, useEffect, useRef } from "react";
 // All AI calls go through the Anthropic Messages API (handled by host).
 // ─────────────────────────────────────────────────────────────
 
-const MODEL = "claude-sonnet-4-20250514";
+const MODEL = "claude-sonnet-4-5";
 
 async function callClaude(system, userText, maxTokens = 1000) {
   const res = await fetch("/api/claude", {
