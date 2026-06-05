@@ -53,7 +53,7 @@ async function callClaudeJSON(system, userText, maxTokens = 1200) {
 // 2) REMEMBER ME — uses browser localStorage so the person isn't asked
 //    to log in again on their next visit (production build).
 // ─────────────────────────────────────────────────────────────
-const LEAD_WEBHOOK_URL = ""; // e.g. "https://script.google.com/macros/s/AKfy.../exec"
+const LEAD_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycby5Th-IjPaEx_3Rreroxpp6XaxTzaAyi7Zz9UztpPdNyxXSGskfYxtKNgrUxCNV7g8KyQ/exec"; // e.g. "https://script.google.com/macros/s/AKfy.../exec"
 const STORE_KEY = "heal_member";
 
 async function saveLead(member) {
