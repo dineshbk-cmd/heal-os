@@ -124,6 +124,13 @@ function Shell({ me, reloadMe }) {
       <header className="topbar">
         <div className="row"><Logo size={24} /><b>Stock Room</b></div>
         <span className="badge brand">{roleName}</span>
+        {/* Tabs sit at the top on phones: Netlify's "Powered by Netlify" badge covers the bottom-right corner */}
+        <nav className="tabbar">
+          {mobileTabs.map(([id, label, icon]) => (
+            <button key={id} className={"nav-btn" + (id === page ? " on" : "")} onClick={() => go(id)}><Icon name={icon} />{label.split(" / ")[0]}</button>
+          ))}
+          <button className={"nav-btn" + (!mobileTabs.some((t) => t[0] === page) ? " on" : "")} onClick={() => setMenu(true)}><Icon name="menu" />More</button>
+        </nav>
       </header>
       <main className="main">
         {api.mode === "demo" && (
@@ -134,12 +141,6 @@ function Shell({ me, reloadMe }) {
         )}
         <Comp me={me} can={can} go={go} reloadMe={reloadMe} key={current[0]} />
       </main>
-      <nav className="tabbar">
-        {mobileTabs.map(([id, label, icon]) => (
-          <button key={id} className={"nav-btn" + (id === page ? " on" : "")} onClick={() => go(id)}><Icon name={icon} />{label.split(" ")[0]}</button>
-        ))}
-        <button className={"nav-btn" + (!mobileTabs.some((t) => t[0] === page) ? " on" : "")} onClick={() => setMenu(true)}><Icon name="menu" />More</button>
-      </nav>
       {menu && (
         <div className="menu-sheet" onClick={(e) => e.target === e.currentTarget && setMenu(false)}>
           <div className="sheet">
