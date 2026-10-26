@@ -1,0 +1,16 @@
+# Netlify site for the inventory app. In Netlify set "Base directory" to
+# `inventory` so this file (not the HEAL OS one at the repo root) is used.
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/auth-phone"
+  to = "/.netlify/functions/auth-phone"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
