@@ -83,3 +83,8 @@ functions locally, install the Netlify CLI and run `netlify dev` instead.
 - `netlify/functions/claude.js` — secure API relay
 - `netlify.toml` — routes `/api/claude` to the function
 - `apps-script/Code.gs` — Google Sheet lead endpoint
+
+---
+
+## Also in this repo: Stock Room (inventory)
+The `inventory/` folder holds a separate app for Empire Biz Corp stock: invoice PDF import, roles, and change history. It deploys as its own Netlify site with **Base directory = `inventory`**. See [`inventory/README.md`](inventory/README.md).
